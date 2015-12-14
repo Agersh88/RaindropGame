@@ -7,7 +7,7 @@ class Snowflake {
   Snowflake(float x, float y) {
     diam = 20;
     loc = new PVector(x,y);
-    vel = new PVector(0,0);
+    vel = new PVector(0,.05);
     acc = new PVector(0,.05);
   }
 
@@ -23,7 +23,7 @@ class Snowflake {
   }
   void reset() {
     if (loc.y >= height) {
-      loc.y = -100;
+      loc.y = 0;
       vel.set(0,0);
     }
   }
