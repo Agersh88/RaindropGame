@@ -6,7 +6,7 @@ class Snowflake {
   //constructor
   Snowflake(float x, float y) {
     diam = 20;
-    loc = new PVector(random(diam, width-diam), -100);
+    loc = new PVector(x,y);
     vel = new PVector(0,0);
     acc = new PVector(0,.05);
   }
