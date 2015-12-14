@@ -11,7 +11,7 @@ void setup() {
   size(800, 600);
   mouse = new PVector();                //initialize mouse PVector. value is irrelevant since it will be set at the start of void draw(){}
   for (int i = 0; i < count; i++) {
-    s[i] = new Snowflake(random(width), random(-height,-50));   //Initialize r. The parameters used are the initial x and y positions
+    s[i] = new Snowflake(random(width), random(-height * 3,-50));   //Initialize r. The parameters used are the initial x and y positions
   }
 }
 
