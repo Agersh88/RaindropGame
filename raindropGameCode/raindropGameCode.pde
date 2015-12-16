@@ -1,6 +1,7 @@
 PVector mouse;   //declare a P
 int count = 50;
 Snowflake[] s = new Snowflake[count];      //declare a new Raindrop called r
+Catcher c = new Catcher();
 
 // On your own, create an array of Raindrop objects instead of just one
 // Use the array instead of the single object
@@ -10,6 +11,7 @@ Snowflake[] s = new Snowflake[count];      //declare a new Raindrop called r
 void setup() {
   size(800, 600);
   mouse = new PVector();                //initialize mouse PVector. value is irrelevant since it will be set at the start of void draw(){}
+  c = new Catcher();
   for (int i = 0; i < count; i++) {
     s[i] = new Snowflake(random(width), random(-height * 3, -50));   //Initialize r. The parameters used are the initial x and y positions
   }
@@ -18,6 +20,7 @@ void setup() {
 void draw() {
   mouse.set(mouseX, mouseY);             //set value of mouse as mouseX,mouseY
   background(0, 200, 255);
+  c.display();
   for (int i = 0; i < count; i++) {
     s[i].fall();         //make the raindrop fall. It should accelerate as if pulled towards the ground by earth's gravity
     s[i].display();      //display the raindrop
