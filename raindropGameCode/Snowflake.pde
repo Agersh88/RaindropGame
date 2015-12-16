@@ -6,9 +6,9 @@ class Snowflake {
   //constructor
   Snowflake(float x, float y) {
     diam = 20;
-    loc = new PVector(x,y);
-    vel = new PVector(0,.05);
-    acc = new PVector(0,.05);
+    loc = new PVector(x, y);
+    vel = new PVector(0, .05);
+    acc = new PVector(0, .05);
   }
 
   //methods
@@ -22,12 +22,15 @@ class Snowflake {
     vel.add(acc);
   }
   void reset() {
-    if (loc.y >= height) {
-      loc.y = 0;
-      vel.set(0,0);
+    loc.y = 0;
+    vel.set(0, 0);
+  }
+
+  boolean isInContactWith(PVector otherPoint) {
+    if (loc.dist(otherPoint) < diam/2) {
+      return true;
+    } else {
+      return false;
     }
   }
-  //void isInContactWith(){
-    
-  //}
 }
