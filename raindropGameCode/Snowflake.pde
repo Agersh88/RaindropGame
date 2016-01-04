@@ -8,7 +8,7 @@ class Snowflake {
     diam = 20;
     loc = new PVector(x, y);
     vel = new PVector(0, 0);
-    acc = new PVector(0, .02);
+    acc = new PVector(0, .01);
   }
 
   //methods

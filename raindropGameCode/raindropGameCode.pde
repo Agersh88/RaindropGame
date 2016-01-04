@@ -1,6 +1,7 @@
 PVector mouse;   //Declare mouse vector
 float score;
 float time;
+float fScore;
 //Array List that allows the cycle of the projectile
 ArrayList<Snowflake> snow = new ArrayList<Snowflake>();
 //Declare the catcher
@@ -13,12 +14,13 @@ void setup() {
   snow.add(new Snowflake(random(width), random(-height * 3, -50)));     //Add the projectile to the Array List
   c = new Catcher();                                             //initialize catcher
   score = 0;
-  time = 99999;
+  time = 5000;
+  fScore = 0;
 }
 
 
 void draw() {
-  mouse.set(mouseX, mouseY);             //set value (location) of mouse as mouseX,mouseY
+  mouse.set(mouseX, 550);             //set value (location) of mouse as mouseX,mouseY
   background(0, 200, 255);   //background of game
   snow.add(new Snowflake(random(width), random(-height * 3, -50)));     //initialize the starting location of the projectile
   textSize(50);
@@ -33,17 +35,20 @@ void draw() {
     if (s.isCaught(mouse)) {        
       snow.remove(i);
       score = score + 1;
+      
     }
   }
   time = time - 1;
   textSize(50);
-  text("Time:" + time, 500, 50);
+  text("Time:" + time, 450, 50);
   c.display();    //call function to display catcher
   c.update();     //call function to update the position of the catcher
-
-  if (score >= 1000) {
-    background(0);
-    textSize(50);
-    text("Winner", 400, 300);
-  }
+  if (time <= 0) {
+        score = score;
+        time = time;
+        fScore = score + time;
+        background(0);
+        textSize(50);
+        text("Score:" + score, 200, 150);
+      }
 }
