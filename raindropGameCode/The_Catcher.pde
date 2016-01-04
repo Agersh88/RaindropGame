@@ -1,15 +1,18 @@
 class Catcher {
-  //fields
+  //FIELDS
+  
   PVector loc;
   int diam;
 
-  //constructor
+  //CONSTRUCTOR
+
   Catcher() {
     diam = 40;
     loc = new PVector();
   }
 
-  //methods
+  //METHODS
+
   void display() {
     fill(255, 0, 0);
     noStroke();
