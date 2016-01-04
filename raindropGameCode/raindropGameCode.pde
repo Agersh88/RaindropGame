@@ -1,5 +1,6 @@
 PVector mouse;   //Declare mouse vector
 float score;
+float time;
 //Array List that allows the cycle of the projectile
 ArrayList<Snowflake> snow = new ArrayList<Snowflake>();
 //Declare the catcher
@@ -12,6 +13,7 @@ void setup() {
   snow.add(new Snowflake(random(width), random(-height * 3, -50)));     //Add the projectile to the Array List
   c = new Catcher();                                             //initialize catcher
   score = 0;
+  time = 99999;
 }
 
 
@@ -33,6 +35,9 @@ void draw() {
       score = score + 1;
     }
   }
+  time = time - 1;
+  textSize(50);
+  text("Time:" + time, 500, 50);
   c.display();    //call function to display catcher
   c.update();     //call function to update the position of the catcher
 
