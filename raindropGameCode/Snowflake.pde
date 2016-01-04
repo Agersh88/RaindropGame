@@ -26,8 +26,8 @@ class Snowflake {
     vel.set(0, 0);
   }
 
-  boolean isInContactWith(PVector otherPoint) {
-    if (loc.dist(otherPoint) < diam) {
+  boolean isCaught(PVector otherPoint) {
+    if (loc.dist(otherPoint) <= diam) {
       return true;
     } else {
       return false;
