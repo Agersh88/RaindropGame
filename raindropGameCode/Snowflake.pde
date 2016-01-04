@@ -27,7 +27,7 @@ class Snowflake {
   }
 
   boolean isCaught(PVector otherPoint) {
-    if (loc.dist(otherPoint) <= diam) {
+    if (loc.dist(otherPoint) <= diam + 20) {
       return true;
     } else {
       return false;
