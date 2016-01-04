@@ -7,13 +7,13 @@ class Snowflake {
   Snowflake(float x, float y) {
     diam = 20;
     loc = new PVector(x, y);
-    vel = new PVector(0, .05);
-    acc = new PVector(0, .05);
+    vel = new PVector(0, 0);
+    acc = new PVector(0, .02);
   }
 
   //methods
   void display() {
-    fill(255, 255, 255);
+    fill(255,255,255);
     noStroke();
     ellipse(loc.x, loc.y, diam, diam);
   }

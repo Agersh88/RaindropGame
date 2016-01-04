@@ -15,7 +15,7 @@ void setup() {
 
 void draw() {
   mouse.set(mouseX, mouseY);             //set value (location) of mouse as mouseX,mouseY
-  background(0);   //background of game
+  background(0,200,255);   //background of game
   snow.add(new Snowflake(random(width), random(-height * 3, -50)));     //initialize the starting location of the projectile
 
   //For loop to add and remove projectile
