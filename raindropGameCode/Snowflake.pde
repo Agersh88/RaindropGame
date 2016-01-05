@@ -2,9 +2,11 @@ class Snowflake {
   //fields
   PVector loc, vel, acc;
   int diam;
+  float M;
 
   //constructor
   Snowflake(float x, float y) {
+    M = random(0,9);
     diam = 20;
     loc = new PVector(x, y);
     vel = new PVector(0, 0);
@@ -16,6 +18,7 @@ class Snowflake {
     fill(255,255,255);
     noStroke();
     ellipse(loc.x, loc.y, diam, diam);
+    text(M, loc.x, loc.y);
   }
   void fall() {
     loc.add(vel);
