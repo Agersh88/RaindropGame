@@ -1,3 +1,9 @@
+class Snowflake {
+  int diam;
+  PVector loc;
+  PVector vel;
+  PVector acc;
+
 Snowflake(float x, float y) {
     diam = 20;
     loc = new PVector(x, y);
@@ -26,3 +32,4 @@ Snowflake(float x, float y) {
     }
   }
 }
+
