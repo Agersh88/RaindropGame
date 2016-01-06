@@ -26,7 +26,7 @@ void setup() {
 void draw() {
   maxSize = 100;
   mouse.set(mouseX, 550);             //set value (location) of mouse as mouseX,mouseY
-  background(0);   //background of game
+  background(0,200,255);   //background of game
   if (snow.size() < maxSize) {
     snow.add(new Snowflake(random(width), random(-height * 3, -50)));     //initialize the starting location of the projectile
   }
