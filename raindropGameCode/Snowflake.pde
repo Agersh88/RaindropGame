@@ -1,12 +1,4 @@
-class Snowflake {
-  //fields
-  PVector loc, vel, acc;
-  int diam;
-  float M;
-
-  //constructor
-  Snowflake(float x, float y) {
-    M = random(0,9);
+Snowflake(float x, float y) {
     diam = 20;
     loc = new PVector(x, y);
     vel = new PVector(0, 0);
@@ -14,21 +6,18 @@ class Snowflake {
   }
 
   //methods
-  void display() {
+  void display() {              //Function to create the snowflake
+    noCursor();
     fill(255,255,255);
     noStroke();
     ellipse(loc.x, loc.y, diam, diam);
-    text(M, loc.x, loc.y);
   }
-  void fall() {
+  void fall() {                 //Function to add velocity and acceleration to the snow
     loc.add(vel);
     vel.add(acc);
   }
-  void reset() {
-    loc.y = 0;
-    vel.set(0, 0);
-  }
 
+  //When the flake touches the catcher it resets
   boolean isCaught(PVector otherPoint) {
     if (loc.dist(otherPoint) <= diam + 20) {
       return true;
